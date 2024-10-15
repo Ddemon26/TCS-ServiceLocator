@@ -1,0 +1,16 @@
+{
+    "name": "TCS.ServiceLocator.Tests",
+    "rootNamespace": "TCS.ServiceLocator.Tests",
+    "references": [
+        "GUID:41f84e06486c8664dab64ebc26c2e48d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
