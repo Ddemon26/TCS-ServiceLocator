@@ -191,13 +191,13 @@ namespace TCS.ServiceLocator {
         }
 
 #if UNITY_EDITOR
-        [MenuItem("GameObject/ServiceLocator/Add Global")]
+        [MenuItem("GameObject/Tent City Studio/Global Managers/ServiceLocator/Add Global")]
         static void AddGlobal() {
             // ReSharper disable once UnusedVariable
             var go = new GameObject(K_GLOBAL_SERVICE_LOCATOR_NAME, typeof(ServiceLocatorGlobal));
         }
 
-        [MenuItem("GameObject/ServiceLocator/Add Scene")]
+        [MenuItem("GameObject/Tent City Studio/Global Managers/ServiceLocator/Add Scene")]
         static void AddScene() {
             // ReSharper disable once UnusedVariable
             var go = new GameObject(K_SCENE_SERVICE_LOCATOR_NAME, typeof(ServiceLocatorScene));
