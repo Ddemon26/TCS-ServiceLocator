@@ -19,9 +19,8 @@ namespace TCS.ServiceLocator {
             return $"<color={color}>[{newString}]</color>";
         }
 
-        static void LogInternal(string message, LogType logType, Object context = null) {
+        static void LogInternal(object message, LogType logType, Object context = null) {
             var formattedMessage = $"{CLASS_NAME.SetPrefix(logType)} {message}";
-#if PROJECT_DEBUG
             switch (logType) {
                 case LogType.Warning:
                     if (!context) {
@@ -65,21 +64,20 @@ namespace TCS.ServiceLocator {
                     Debug.Log(formattedMessage, context);
                     break;
             }
-#endif
         }
 
         //Without context
-        public static void Log(string message) => LogInternal(message, LogType.Log);
-        public static void LogWarning(string message) => LogInternal(message, LogType.Warning);
-        public static void LogError(string message) => LogInternal(message, LogType.Error);
-        public static void LogAssert(string message) => LogInternal(message, LogType.Assert);
-        public static void LogException(string message) => LogInternal(message, LogType.Exception);
+        public static void Log(object message) => LogInternal(message, LogType.Log);
+        public static void LogWarning(object message) => LogInternal(message, LogType.Warning);
+        public static void LogError(object message) => LogInternal(message, LogType.Error);
+        public static void LogAssert(object message) => LogInternal(message, LogType.Assert);
+        public static void LogException(object message) => LogInternal(message, LogType.Exception);
 
         //With context
-        public static void Log(string message, Object ctx) => LogInternal(message, LogType.Log, ctx);
-        public static void LogWarning(string message, Object ctx) => LogInternal(message, LogType.Warning, ctx);
-        public static void LogError(string message, Object ctx) => LogInternal(message, LogType.Error, ctx);
-        public static void LogAssert(string message, Object ctx) => LogInternal(message, LogType.Assert, ctx);
-        public static void LogException(string message, Object ctx) => LogInternal(message, LogType.Exception, ctx);
+        public static void Log(object message, Object ctx) => LogInternal(message, LogType.Log, ctx);
+        public static void LogWarning(object message, Object ctx) => LogInternal(message, LogType.Warning, ctx);
+        public static void LogError(object message, Object ctx) => LogInternal(message, LogType.Error, ctx);
+        public static void LogAssert(object message, Object ctx) => LogInternal(message, LogType.Assert, ctx);
+        public static void LogException(object message, Object ctx) => LogInternal(message, LogType.Exception, ctx);
     }
 }

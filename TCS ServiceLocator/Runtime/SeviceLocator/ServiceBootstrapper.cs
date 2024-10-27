@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-
 namespace TCS.ServiceLocator {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(ServiceLocator))]
-    public abstract class Bootstrapper : MonoBehaviour {
+    public abstract class ServiceBootstrapper : MonoBehaviour {
         ServiceLocator m_container;
         internal ServiceLocator Container => m_container.OrNull() ?? (m_container = GetComponent<ServiceLocator>());
         

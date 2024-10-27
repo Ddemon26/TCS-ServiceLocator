@@ -85,8 +85,9 @@ namespace TCS.ServiceLocator {
         /// Gets the closest ServiceLocator instance to the provided 
         /// MonoBehaviour in hierarchy, the ServiceLocator for its scene, or the global ServiceLocator.
         /// </summary>
-        public static ServiceLocator For(MonoBehaviour mb)
-            => mb.GetComponentInParent<ServiceLocator>().OrNull() ?? ForSceneOf(mb) ?? Global;
+        public static ServiceLocator For(MonoBehaviour mb) => mb
+            .GetComponentInParent<ServiceLocator>()
+            .OrNull() ?? ForSceneOf(mb) ?? Global;
 
         /// <summary>
         /// Registers a service to the ServiceLocator using the service's type.
